@@ -8,7 +8,8 @@ class BooksTest < ActionDispatch::IntegrationTest
   end
 
   test 'User can see details of one book' do
-       get '/books/1'
+       book = books(:one)
+       get book_path(book)
        assert_select 'h2', 'A tale of two cities'
        assert_select "p", '1903'
        assert_select "p", 'Charles Dickens'
