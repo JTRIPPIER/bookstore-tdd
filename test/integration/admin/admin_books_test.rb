@@ -23,7 +23,7 @@ class AdminBooksTest < ActionDispatch::IntegrationTest
   end
 
   test 'Admins can create a new book' do
-    assert_equal 1, Book.count
+    assert_equal 2, Book.count
 
     visit new_admin_book_path
 
@@ -32,7 +32,7 @@ class AdminBooksTest < ActionDispatch::IntegrationTest
     fill_in "Year", with: "1948"
     click_button "Create Book"
 
-    assert_equal 2, Book.count
+    assert_equal 3, Book.count
 
     get '/admin/books'
     assert_select 'a', '1984'

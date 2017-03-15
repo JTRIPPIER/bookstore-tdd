@@ -2,3 +2,14 @@
   <li>Great book</li>
   <li>Rubbish book</li>
 </ul>
+
+<ul>
+  <% @reviews.each do |r| %>
+    <li>
+      <p>
+        <%= r.book.title %>
+      </p>
+      <%= r.comment %>
+    </li>
+  <% end %>
+</ul>
