@@ -3,6 +3,6 @@ Rails.application.routes.draw do
   resources :books, only: [:index, :show]
 
   namespace :admin do
-    resources :books, only: [:index, :edit]
+    resources :books, only: [:index, :edit, :update, :new, :create]
   end
 end

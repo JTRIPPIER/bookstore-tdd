@@ -1,4 +1,11 @@
 <h1>Books</h1>
-<p>A tale of two cities</p>
+
+<% @books.each do |b| %>
+  <div>
+    <%= link_to b.title, edit_admin_book_path(b) %>
+    <p><%= b.author %></p>
+    <p><%= b.year %></p>
+  </div>
+<% end %>
 
 <button type="button" name="add-book">Add a new book</button>
